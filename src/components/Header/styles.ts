@@ -1,7 +1,8 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 interface ContainerProps {
   size?: 'small' | 'large';
+  active?: boolean;
 }
 
 export const Container = styled.div<ContainerProps>`
@@ -22,6 +23,11 @@ export const Container = styled.div<ContainerProps>`
         text-decoration: none;
         font-size: 16px;
         transition: opacity 0.2s;
+        padding-bottom: 12px;
+
+        &.active {
+          border-bottom: 2px solid #ff872c;
+        }
 
         & + a {
           margin-left: 32px;
